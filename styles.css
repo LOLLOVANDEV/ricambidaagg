@@ -244,21 +244,32 @@ header {
 }
 
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
     cursor: pointer;
-    gap: 6px;
-    padding: 10px;
     z-index: 1001;
 }
 
 .hamburger span {
-    width: 28px;
+    display: block;
     height: 3px;
-    background: var(--primary-color);
+    width: 100%;
+    background-color: var(--text-dark);
     border-radius: 3px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.header-minimal .hamburger span {
+    background-color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .hamburger {
+        display: flex;
+    }
 }
 
 .hamburger.active span:nth-child(1) {
@@ -274,7 +285,7 @@ header {
 }
 
 .mobile-menu {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     right: -100%;
